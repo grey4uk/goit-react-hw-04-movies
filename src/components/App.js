@@ -38,7 +38,7 @@ class App extends Component {
       <header>
         <Router>
           <NavLink
-            exact
+          exact
             to="/home"
             className={css.link}
             activeClassName={css.activeLink}
@@ -54,7 +54,7 @@ class App extends Component {
           </NavLink>
           <Switch>
             <Route
-              exact
+            exact
               path="/home"
               render={() => (
                 <Suspense fallback={<Spinner type="Bars" color="purple" />}>

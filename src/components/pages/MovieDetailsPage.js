@@ -19,18 +19,27 @@ class MovieDetailsPage extends Component {
     firstPartOfSrc: "https://image.tmdb.org/t/p/original",
     reviews: [],
     cast: [],
-    from:""
+    from: "/"
   };
 
   componentDidMount() {
-    const { id } = this.props.location.state.movie;
-
-    services
-      .getMovieById(id)
-      .then(data => this.setState({ film: { ...data.data }, from: this.props.location.state.from}));
+    if (this.props.location.state.movie) {
+      const { id } = this.props.location.state.movie;
+      services
+        .getMovieById(id)
+        .then(data =>
+          this.setState({
+            film: { ...data.data },
+            from: this.props.location.state.from
+          })
+        );
+    } else {
+      alert("Something wrong");
+      this.props.history.push(`/home`);
+    }
   }
 
-  onGoBackClick = e => {
+  onGoBackClick = () => {
     const { from } = this.state;
     this.props.history.push(`/${from}`);
   };
