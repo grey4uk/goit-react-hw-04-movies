@@ -39,14 +39,14 @@ class MoviesPage extends Component {
 
     const { query } = this.state;
     this.setState({ isLoad: true });
-    services
+    query?services
       .getMovieByQuery(query)
       .then(data =>
         this.setState({
           film: data.data.results
         })
       )
-      .finally(() => this.setState({ isLoad: false }));
+      .finally(() => this.setState({ isLoad: false })):alert("Input is empty");
     this.props.history.push(`?query=${query}`);
     localStorage.setItem("query", `${query}`);
   };

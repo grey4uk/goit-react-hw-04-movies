@@ -18,18 +18,20 @@ class MovieDetailsPage extends Component {
     film: null,
     firstPartOfSrc: "https://image.tmdb.org/t/p/original",
     reviews: [],
-    cast: []
+    cast: [],
+    from:""
   };
 
   componentDidMount() {
     const { id } = this.props.location.state.movie;
+
     services
       .getMovieById(id)
-      .then(data => this.setState({ film: { ...data.data } }));
+      .then(data => this.setState({ film: { ...data.data }, from: this.props.location.state.from}));
   }
 
   onGoBackClick = e => {
-    const { from } = this.props.location.state;
+    const { from } = this.state;
     this.props.history.push(`/${from}`);
   };
 
