@@ -6,6 +6,10 @@ img {
 
 body {
   padding: 20px;
+  font-family: 'Acme', sans-serif;
+  background-image: linear-gradient(rgba(252, 227, 138, .9),rgba(255, 255, 255, .2)), url("https://picua.org/images/2020/03/25/5a58e84e1c52070b88ab342ec2b3bc16.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 button {

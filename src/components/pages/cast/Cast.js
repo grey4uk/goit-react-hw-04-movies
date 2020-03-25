@@ -5,19 +5,19 @@ import { withRouter} from 'react-router-dom';
 
 
 class Cast extends Component {
-  state = { casts: [] };
+  state = { casts: null };
 
   componentDidMount() {
     services
       .getMovieCast(this.props.location.state.film.id)
-      .then(data => this.setState({ casts: data.data.cast }));
+      .then(data => this.setState({ casts: data.data.cast.length!==0?data.data.cast:null }));
   }
 
   render() {
     const { casts } = this.state;
     const firstPartOfSrc = this.props.location.state.firstPartOfSrc;
     return (
-      <ul className={css.castList}>
+      casts?<ul className={css.castList}>
         {casts.map(cast => (
           <li className={css.castListItem} key={cast.cast_id}>
             <img
@@ -35,6 +35,7 @@ class Cast extends Component {
           </li>
         ))}
       </ul>
+      :<p>Nothing found</p>
     );
   }
 }
