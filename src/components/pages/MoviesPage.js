@@ -37,21 +37,22 @@ class MoviesPage extends Component {
 
   handleSubmit = async e => {
     e.preventDefault();
-
+   
     const { query } = this.state;
-    this.setState({ isLoad: true });
-    query
-      ? services
+    
+    if(query)
+      {this.setState({ isLoad: true });
+         services
           .getMovieByQuery(query)
           .then(data =>
             this.setState({
               film: data.data.results
             })
           )
-          .finally(() => this.setState({ isLoad: false }))
-      : alert("Input is empty");
-    this.props.history.push(`?query=${query}`);
-    localStorage.setItem("query", `${query}`);
+          .finally(() => this.setState({ isLoad: false }))}
+      else{ alert("Input is empty")};
+      this.props.history.push(`?query=${query}`);
+      localStorage.setItem("query", `${query}`);
   };
 
   render() {

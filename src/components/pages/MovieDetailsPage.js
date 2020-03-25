@@ -49,7 +49,7 @@ class MovieDetailsPage extends Component {
     return (
       film && (
         <div>
-          <div className={css.goBackButton}>
+          <div className={css.goBackButtonBlock}>
             <button type="button" onClick={this.onGoBackClick}>
               go back
             </button>
