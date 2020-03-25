@@ -1,0 +1,20 @@
+.castList {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.castListItem {
+    width: 15vw;
+    /* box-shadow: 2px 0 6px #000; */
+}
+
+.castListItem:hover {
+    transform: scale(1.05);
+    background-color: #2e2c2c71;
+}
+
+.castPhoto {
+    width: 100%;
+}

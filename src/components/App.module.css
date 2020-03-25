@@ -1,0 +1,59 @@
+img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+body {
+  padding: 20px;
+}
+
+button {
+  border-radius: 4px;
+}
+
+.link {
+  text-decoration: none;
+}
+
+.link:not(:last-child) {
+  margin-right: 10px;
+}
+
+.activeLink {
+  color: red;
+}
+
+
+.photoBlock {
+  padding: 0 30px;
+}
+
+.descBlock {}
+
+.poster {
+  width: 300px;
+}
+
+.goBackButton {
+  width: 100%;
+  padding: 10px;
+}
+
+article {
+  display: flex;
+  padding: 30px 0;
+  border-bottom: 1px solid #000000;
+}
+
+/* h2{
+  text-align: center;
+} */
+
+.additionalCategory {
+  border-bottom: 1px solid #000000;
+}
+
+.additionalInformation {
+  padding: 10px 20px;
+}
