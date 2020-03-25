@@ -52,6 +52,11 @@ transform: scale(1.2);
   color: #ff0000;
 }
 
+.filmLink:hover{
+background-color: #fce38a;
+font-size: 1.2-large;
+}
+
 
 .photoBlock {
   padding:20px;

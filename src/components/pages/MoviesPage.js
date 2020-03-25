@@ -3,6 +3,7 @@ import { Link, withRouter } from "react-router-dom";
 import queryString from "query-string";
 import services from "../services";
 import { Spinner } from "../ui/spinner";
+import css from '../App.module.css';
 
 class MoviesPage extends Component {
   state = {
@@ -76,7 +77,7 @@ class MoviesPage extends Component {
           <>
             <ul>
               {film.map(el => (
-                <li key={el.id}>
+                <li key={el.id} className={css.filmLink}>
                   <Link
                     to={{
                       pathname: `/movies/${el.id}`,

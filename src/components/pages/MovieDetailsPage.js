@@ -89,7 +89,7 @@ class MovieDetailsPage extends Component {
             <h3>Additional information</h3>
             <ul className={css.additionalCategory}>
               <li>
-                <Link
+                <Link 
                   to={{
                     pathname: `/movies/${film.id}/cast`,
                     state: { film, firstPartOfSrc }
