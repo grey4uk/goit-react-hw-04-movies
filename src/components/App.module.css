@@ -13,16 +13,39 @@ body {
 }
 
 button {
-  border-radius: 4px;
-  box-shadow: 2px 2px 4px #0000003b;
+  border-style: none;
+  border-radius: 0 6px 6px 0;
+  box-shadow: 2px 1px 4px #8d7f4e;
+  outline-style: none;
+  background-color: #fce38a;
+}
+
+button:hover{
+  cursor: pointer;
+  transform: scale(1.2);
+  font-weight: bold;
+}
+
+form{
+  padding: 20px 0;
+}
+
+input{
+  outline-style: none;
+  border-radius: 6px 0 0 6px;
 }
 
 .link {
   text-decoration: none;
+  /* transition: transform .2s linear; */
 }
 
 .link:not(:last-child) {
   margin-right: 10px;
+}
+
+.link:hover{
+transform: scale(1.2);
 }
 
 .activeLink {
@@ -31,7 +54,7 @@ button {
 
 
 .photoBlock {
-  padding: 0 30px;
+  padding:20px;
 }
 
 .descBlock {}

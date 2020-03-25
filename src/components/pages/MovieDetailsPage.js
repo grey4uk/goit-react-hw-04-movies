@@ -46,9 +46,11 @@ class MovieDetailsPage extends Component {
 
   render() {
     const { film, firstPartOfSrc } = this.state;
+   
     return (
       film && (
         <div>
+           { console.log('DETAILS', film.release_date.split('-').splice(0,1)[0])}
           <div className={css.goBackButtonBlock}>
             <button type="button" onClick={this.onGoBackClick}>
               go back
@@ -67,7 +69,7 @@ class MovieDetailsPage extends Component {
               />
             </div>
             <div className={css.descBlock}>
-              <h2>{film.title}</h2>
+              <h2>{film.title}<span>({film.release_date.split('-').splice(0,1)[0]})</span></h2>
               <span>User Score : {film.vote_average * 10}%</span>
               <h3>Overveiw</h3>
               <p>{film.overview}</p>
