@@ -46,11 +46,9 @@ class MovieDetailsPage extends Component {
 
   render() {
     const { film, firstPartOfSrc } = this.state;
-   
     return (
       film && (
         <div>
-           { console.log('DETAILS', film.release_date.split('-').splice(0,1)[0])}
           <div className={css.goBackButtonBlock}>
             <button type="button" onClick={this.onGoBackClick}>
               go back
@@ -133,15 +131,6 @@ class MovieDetailsPage extends Component {
                   )}
                 />
               </Switch>
-              {/* <Route
-              exact
-              path="/home"
-              render={() => (
-                <Suspense fallback={<Spinner type="Bars" color="purple" />}>
-                  <LazyLoadHomePage movies={movies} />
-                </Suspense>
-              )}
-            /> */}
             </div>
           </div>
         </div>
